@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Tue 16 Jul 2019 10:21:28 AM CDT by Eclipse SUMO netedit Version v1_1_0+0000-2147d155b1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="/home/mesto/flow/MyTests/I24-62.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/mesto/flow/MyTests/I24-62.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-internal-links value="true"/>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<net version="1.1" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,644.00,0.00" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <edge id="gneE0" from="gneJ0" to="gneJ1" priority="-1">
+        <lane id="gneE0_0" index="0" speed="30.00" length="644.00" shape="0.00,-11.20 644.00,-11.20"/>
+        <lane id="gneE0_1" index="1" speed="30.00" length="644.00" shape="0.00,-8.00 644.00,-8.00"/>
+        <lane id="gneE0_2" index="2" speed="30.00" length="644.00" shape="0.00,-4.80 644.00,-4.80"/>
+        <lane id="gneE0_3" index="3" speed="30.00" length="644.00" shape="0.00,-1.60 644.00,-1.60"/>
+    </edge>
+
+    <junction id="gneJ0" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,0.00 0.00,-12.80"/>
+    <junction id="gneJ1" type="dead_end" x="644.00" y="0.00" incLanes="gneE0_0 gneE0_1 gneE0_2 gneE0_3" intLanes="" shape="644.00,-12.80 644.00,0.00"/>
+
+</net>

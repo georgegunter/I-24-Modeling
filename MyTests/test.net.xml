@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Mon 15 Jul 2019 01:43:24 PM CDT by Eclipse SUMO netedit Version v1_1_0+0000-2147d155b1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="/home/mesto/flow/MyTests/I24-62.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/mesto/flow/MyTests/test.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-internal-links value="true"/>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<net version="1.1" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,1087.23,255.74" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <edge id="gneE0" from="gneJ0" to="gneJ1" priority="-1">
+        <lane id="gneE0_0" index="0" speed="30.00" length="644.00" shape="0.00,-11.20 644.00,-11.20"/>
+        <lane id="gneE0_1" index="1" speed="30.00" length="644.00" shape="0.00,-8.00 644.00,-8.00"/>
+        <lane id="gneE0_2" index="2" speed="30.00" length="644.00" shape="0.00,-4.80 644.00,-4.80"/>
+        <lane id="gneE0_3" index="3" speed="30.00" length="644.00" shape="0.00,-1.60 644.00,-1.60"/>
+    </edge>
+    <edge id="gneE8" from="gneJ1" to="gneJ9" priority="-1" shape="644.00,0.00 950.90,4.53 1037.69,54.11 1076.31,128.86 1087.23,191.55 1058.25,242.54 977.04,255.74 869.24,233.15">
+        <lane id="gneE8_0" index="0" speed="13.89" length="805.73" shape="644.17,-11.20 953.95,-6.63 1046.12,46.03 1087.05,125.25 1098.95,193.59 1065.34,252.73 976.78,267.13 866.94,244.11"/>
+        <lane id="gneE8_1" index="1" speed="13.89" length="805.73" shape="644.12,-8.00 953.08,-3.44 1043.71,48.34 1083.98,126.28 1095.60,193.01 1063.31,249.82 976.86,263.88 867.60,240.98"/>
+        <lane id="gneE8_2" index="2" speed="13.89" length="805.73" shape="644.07,-4.80 952.21,-0.25 1041.30,50.65 1080.91,127.31 1092.25,192.42 1061.29,246.91 976.93,260.62 868.26,237.85"/>
+        <lane id="gneE8_3" index="3" speed="13.89" length="805.73" shape="644.02,-1.60 951.34,2.94 1038.89,52.96 1077.84,128.34 1088.90,191.84 1059.26,244.00 977.00,257.37 868.91,234.72"/>
+    </edge>
+
+    <junction id="gneJ0" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,0.00 0.00,-12.80"/>
+    <junction id="gneJ1" type="priority" x="644.00" y="0.00" incLanes="gneE0_0 gneE0_1 gneE0_2 gneE0_3" intLanes="" shape="644.10,0.00 644.29,-12.80 643.90,-12.80 643.90,0.00">
+        <request index="0" response="0000" foes="0000"/>
+        <request index="1" response="0000" foes="0000"/>
+        <request index="2" response="0000" foes="0000"/>
+        <request index="3" response="0000" foes="0000"/>
+    </junction>
+    <junction id="gneJ9" type="dead_end" x="869.24" y="233.15" incLanes="gneE8_0 gneE8_1 gneE8_2 gneE8_3" intLanes="" shape="866.61,245.68 869.24,233.15"/>
+
+    <connection from="gneE0" to="gneE8" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="gneE0" to="gneE8" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from="gneE0" to="gneE8" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from="gneE0" to="gneE8" fromLane="3" toLane="3" dir="s" state="M"/>
+
+</net>

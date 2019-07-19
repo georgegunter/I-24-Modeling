@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Tue 16 Jul 2019 10:34:12 AM CDT by Eclipse SUMO netedit Version v1_1_0+0000-2147d155b1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="/home/mesto/flow/MyTests/I24-62.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/mesto/flow/MyTests/I24-62.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-internal-links value="true"/>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <vType id="human" maxSpeed="30.00" speedDev="0.10" carFollowModel="IDM" color="yellow" impatience="0.50"/>
+    <e1Detector id="e1Detector_gneE0_0_3" lane="gneE0_0" pos="0.26" freq="30.00" file="e1Detector_gneE0_0_3.xml"/>
+    <e1Detector id="e1Detector_gneE0_0_4" lane="gneE0_0" pos="636.01" freq="30.00" file="e1Detector_gneE0_0_4(out).xml"/>
+    <e1Detector id="e1Detector_gneE0_1_2" lane="gneE0_1" pos="0.28" freq="30.00" file="e1Detector_gneE0_1_2.xml"/>
+    <e1Detector id="e1Detector_gneE0_1_5" lane="gneE0_1" pos="636.01" freq="30.00" file="e1Detector_gneE0_1_5(out).xml"/>
+    <e1Detector id="e1Detector_gneE0_2_1" lane="gneE0_2" pos="0.29" freq="30.00" file="e1Detector_gneE0_2_1.xml"/>
+    <e1Detector id="e1Detector_gneE0_2_6" lane="gneE0_2" pos="636.01" freq="30.00" file="e1Detector_gneE0_2_6(out).xml"/>
+    <e1Detector id="e1Detector_gneE0_3_0" lane="gneE0_3" pos="0.35" freq="30.00" file="e1Detector_gneE0_3_0.xml"/>
+    <e1Detector id="e1Detector_gneE0_3_7" lane="gneE0_3" pos="636.01" freq="30.00" file="e1Detector_gneE0_3_7(out).xml"/>
+</additional>
