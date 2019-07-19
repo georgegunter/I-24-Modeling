@@ -5,13 +5,17 @@ import subprocess
 import os
 
 #TODO: add inputs for the variables
+#Creates the flow XML file
 def GenerateXMLs(filepath="/home/mesto/flow/MyTests/flows.xml"):
     flows = makexml('routes', 'http://sumo.dlr.de/xsd/routes_file.xsd')
     flows.append(CreateVTypeElem('human', '2.6', '4.5', '0.5', '70', '2.5', '0.0'))
-    flows.append(CreateFlowElem('634155175', 'flow_0', '1', '20000000', '28000', 'human', '30'))
+    flows.append(CreateFlowElem('634155175', 'flow_0', '1', '20000000', '2800', 'human', '30'))
     
     printxml(flows, filepath)
 
+#Creates XML Element with vehicle parameters
+#Accepts parameters describing the vehicles control model.
+#Vehicles with this same ID follow these parameters
 def CreateVTypeElem(id, accel, decel, sigma, maxSpeed, minGap, speedDev):
     vehicle = elem('vType')
     vehicle.set('id', id)
@@ -24,7 +28,8 @@ def CreateVTypeElem(id, accel, decel, sigma, maxSpeed, minGap, speedDev):
     vehicle.set('speedDev', speedDev)
     return vehicle
 
-
+#Creates XML Element with the flow parameter
+#Define the starting edge, start and end times, flow rate, type of vehicle, and start speed
 def CreateFlowElem(origin, id, begin, end, rate, type, speed):
     item = elem('flow')
     item.set("from", origin)
@@ -34,40 +39,24 @@ def CreateFlowElem(origin, id, begin, end, rate, type, speed):
     item.set('vehsPerHour', rate)
     item.set('type', type)
     item.set('departSpeed', speed)
-    item.set('departPos', '0')
-    item.set('departLane', 'random')
+    item.set('departPos', 'base')
+    #item.set('departLane', 'random')
     return item
 
+#Takes the defined flow and network XML files, and creates a routes xml file
 def JTRRouter(net, output, flows, steps):
     cmd = '/home/mesto/sumo_binaries/bin/jtrrouter '
     cmd += '--net-file=' + net + ' '
     cmd += '--output-file=' + output + ' '
     cmd += '--flow-files=' + flows + ' '
+    cmd += '--departlane free '
     cmd += '-s ' + str(steps) + ' '
     cmd += '-T 10,90'
     os.system(cmd)
 
-flowFile = '/home/mesto/flow/MyTests/flows.xml'
-outputFile = '/home/mesto/flow/MyTests/turnRoutes.rou.xml'
-netFile = '/home/mesto/flow/MyTests/FinalNetwork.net.xml'
-GenerateXMLs(filepath=flowFile)
-JTRRouter(netFile, outputFile, flowFile, 200)
-
-'''
-turnFile = makexml('turns', 'http://sumo.dlr.de/xsd/turns_file.xsd')
-#turns = elem('turns')
-interval = etree.Element('interval')
-interval.set('begin', '1')
-interval.set('end', '2000000')
-fromEdge = etree.SubElement(interval, 'fromEdge')
-fromEdge.set('id', 'gneE0')
-toEdge = etree.SubElement(fromEdge, 'toEdge')
-toEdge.set('id', 'gneE1')
-toEdge.set('probability', '0.9')
-toEdge = etree.SubElement(fromEdge, 'toEdge')
-toEdge.set('id', 'gneE3')
-toEdge.set('probability', '0.1')
-turnFile.append(interval)
-printxml(turnFile, "/home/mesto/flow/MyTests/turns.xml")
-'''
-#os.system('/home/mesto/sumo_binaries/bin/jtrrouter --net-file=/home/mesto/flow/MyTests/turnNet.net.xml --output-file=/home/mesto/flow/MyTests/turnRoutes.rou.xml --flow-files=/home/mesto/flow/MyTests/flows.xml -T 10,90')
+if __name__ == "__main__":
+    flowFile = '/home/mesto/flow/MyTests/flows.xml'
+    outputFile = '/home/mesto/flow/MyTests/turnRoutes.rou.xml'
+    netFile = '/home/mesto/flow/MyTests/FinalNetwork.net.xml'
+    GenerateXMLs(filepath=flowFile)
+    JTRRouter(netFile, outputFile, flowFile, 200)

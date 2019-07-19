@@ -4,6 +4,10 @@ import MyTests.xml2csv as XMLConvert
 from flow.controllers import OVMController
 import time
 import csv
+
+#Takes scenario parameters
+#Runs the sumo simulation
+#Calls getError and prints it to console
 def run(gui=False,
         output = "/home/mesto/flow/MyTests/TEST/",
         step=0.1,
@@ -34,6 +38,10 @@ def run(gui=False,
             os.remove(os.path.join(output ,data))
     print(GetError(output, flow_rate))
 
+#Takes the folder where the e1detector files are stored
+#Also takes the inflow rate of vehicles
+#Outputs a percent error between detected and input flows
+#TODO: Modify error function
 def GetError(data_path, flow):
     error = 0
     errSum = 0

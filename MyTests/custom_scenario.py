@@ -9,6 +9,10 @@ from flow.core.params import EnvParams, InFlows
 from flow.core.params import SumoParams
 	
 from flow.envs.test import TestEnv
+
+#Defines an environment for the cars to run in
+#This is done to have access to the additional_command() method
+#Can be used to edit the simulation while running at certain steps
 class myEnv(TestEnv):
     roadSpeed = 30
     def getSpeed(self):
@@ -19,12 +23,13 @@ class myEnv(TestEnv):
         if self.step_counter == 1:
             self.k.simulation.kernel_api.edge.setMaxSpeed("634155175", self.getSpeed())
 
-
 class Custom_Scenario(Scenario):
 
+    '''
     def specify_routes(self, net_params):
 
         return {"634155175": ["634155175"]}
+    '''
 
 def run_scenario(render=False,
                  emissions="/home/mesto/flow/data/",
@@ -40,7 +45,7 @@ def run_scenario(render=False,
 	initial_config = InitialConfig()
 	vehicles = VehicleParams()
 
-	sim_params = SumoParams(render=render, sim_step=step, emission_path=emissions, restart_instance=True)
+	sim_params = SumoParams(render=render, sim_step=step, emission_path=emissions)
 
 	vehicles = VehicleParams()
 	inflow = InFlows()
@@ -49,11 +54,10 @@ def run_scenario(render=False,
 	    veh_id="human",
 	    acceleration_controller=(car_following_model, {}),
 	    num_vehicles=20)
-
 	inflow.add(
 	    veh_type="human",
 	    end=100,
-	    edge="gneE0",
+	    edge="634155175",
 	    vehs_per_hour=flow_rate,
 	    departLane="free",
 	    departSpeed=speed)
@@ -65,6 +69,11 @@ def run_scenario(render=False,
 	    departLane="free",
 	    departSpeed=speed)
 	'''
+        #Parameters for the network.
+        #Template( net: file path for the sumo network. rou: path to the routes xml file
+        #vtype: path to vehicle types xml. 
+        #e1det: Requires modified traci simulation python file. Points to where detector definitions are stored
+        #location that output will be saved. Also requires modified traci.py
 	net_params = NetParams(inflows=inflow, template= {
 	                       "net" : "/home/mesto/flow/MyTests/FinalNetwork.net.xml",
                                "rou" : "/home/mesto/flow/MyTests/turnRoutes.rou.xml",
@@ -77,14 +86,17 @@ def run_scenario(render=False,
 	initial_config = InitialConfig(
 	    edges_distribution=["634155175"])
 
-
-
 	scenario = Custom_Scenario(
 	    name="template",
 	    net_params=net_params,
 	    initial_config=initial_config,
 	    vehicles=vehicles
 	)
+	
+	#The following determines which lanes vehicles spawn in. By default they spawn in rightmost lane
+        #possibles are: int (number of lane), free (which lane is open), best, random
+	for key in scenario.template_vehicles:
+	    scenario.template_vehicles[key]['departLane'] = 'free'
 
 	env = myEnv(
 	    env_params=env_params,
