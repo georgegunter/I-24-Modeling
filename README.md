@@ -2,7 +2,6 @@
 This repository is run on two main scripts:
 The first is the custom_scenario.py file,
 the second is MySimulator.py.
-
     Custom_Scenario defines how our simulation will interact with SUMO through the FLOW packages.
 A simulation running in flow is defined by a few main components. The first is the scenario. Each
 scenario inherits the Scenario class from Base_Scenario.py, located in the scenarios folder of flow.
@@ -29,7 +28,6 @@ edge speed at runtime.
 If detectors have been defined in the net_params.template dictionary, they will output CSV files with
 macroscopic simulation data. Right now the script only takes data from the detectors whose file contains
 '(out)' in the name, which is changed in NetEdit, but I plan to change this.
-
     MySimulator.py takes the simuation parameters, runs the simulation as defined by custom_scenario.py
 and then calls the GetError method with the CSV output of the detectors, as well as the predefined inflow.
 The GetError method will be changed to give a better sense of how well the simulation performs.
@@ -37,10 +35,8 @@ The GetError method will be changed to give a better sense of how well the simul
 but I plan to have the MySimulator.py be the only thing that has to run, where it will take all parameters,
 run the TurnRouterTest.py, then return the error given by GetError. At that point, one should be able
 to run an optimization routine.
-
     In order to run the simulation, one should be able to copy and paste the files in the GitHub into the flow directory
 and change the filepaths in the three scripts MySimulator.py, custom_scenario.py, and TurnRouterTest.py to
 reflect their local machine. To get output from detectors, you also must place the traci.py script into flow.
 Its path in the github should match where it goes in the actual flow directories.
-
-One can also run the simulation without interacting with Sumo through flow. To do this, one keeps all of the same network XML files, as well as xml2csv just as if setting up MySimulator.py. However, instead of running MySimulator.py, you run SimulateSumo.py. This calls TurnRouterTest.py in order to generate some of the network files, and also xml2csv in order to convert the output to CSV files. The benefit to running the simulation through Sumo instead of both Sumo and Flow, is that the simulation will be completed much faster. Theoretically, MySimulator should run just as fast since Flow is not used in a manner that should add complexity to the simulation. There might be a bug in Flow causing this, but currently we are not sure why it happens. Therefore, I reccomend using SimulateSumo to complete simulations, especially ones lasting more then a few minutes, until this issue can be worked out.
+    One can also run the simulation without interacting with Sumo through flow. To do this, one keeps all of the same network XML files, as well as xml2csv just as if setting up MySimulator.py. However, instead of running MySimulator.py, you run SimulateSumo.py. This calls TurnRouterTest.py in order to generate some of the network files, and also xml2csv in order to convert the output to CSV files. The benefit to running the simulation through Sumo instead of both Sumo and Flow, is that the simulation will be completed much faster. Theoretically, MySimulator should run just as fast since Flow is not used in a manner that should add complexity to the simulation. There might be a bug in Flow causing this, but currently we are not sure why it happens. Therefore, I reccomend using SimulateSumo to complete simulations, especially ones lasting more then a few minutes, until this issue can be worked out.
