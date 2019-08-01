@@ -221,6 +221,9 @@ def getOutStream(output):
     return open(output, 'wb')
 
 
+#The following two functions were modified slightly by Matthew Estopinal in order to facilitate
+#directly calling this script from another script, rather than just using it on the command line.
+
 def get_options():
     optParser = OptionParser(
         usage=os.path.basename(sys.argv[0]) + " [<options>] <input_file_or_port>")

@@ -1,15 +1,46 @@
+"""
+@author: Matthew Estopinal
+
+Instructions: This script runs the simulation through Sumo WITHOUT Flow, and can run it with or 
+without a GUI.
+
+It requires two main components to be configured properly. The first is the XML files that detail
+the scenario that is being simulated. These consist of the network, and detector files that should
+be created via NetEdit or some other method, and the routes file and flow definitions that will be
+generated from this script. The second component is the simulation parameters that are defined in
+this simulation that control things like the duration of the simulation, vehicle following
+parameters, the inflows, and things of that nature.
+
+This script should be run in a folder such that it can access the XMLs, as well as import
+from the TurnRouterTest and xml2csv scripts, and access traci.
+
+When the simulation is run, it will create a folder whose name is controlled by the output variable
+and will generate XML files from the detectors in the simulation. Once the simulation is finished
+these XML files are replaced with CSV files that are easier to work with.
+
+"""
+import sys
+
+#Directory that this script is stored in
+my_path = '/home/mesto/flow/MyTests/'
+
+#Path to save data to
+output = my_path + 'SumoTest/'
+
+#Paths of network definitions files
+net_path = my_path + 'NoI440Edit.net.xml'
+add_path = my_path + 'Detectors_NoI440Edit.xml'
+
+#Paths of network files that will be created and used
+routes_path = my_path + 'turnRoutes.rou.xml'
+flow_def = my_path + 'flows.xml'
+
+sys.path.append(my_path)
+
 import traci
 import os
 import MyTests.xml2csv as XMLConvert
 from MyTests.TurnRouterTest import TurnRouter
-
-my_path = '/home/mesto/flow/MyTests/'
-
-output = my_path + 'SumoTest/'
-net_path = my_path + 'NoI440Edit.net.xml'
-routes_path = my_path + 'turnRoutes.rou.xml'
-add_path = my_path + 'Detectors_NoI440Edit.xml'
-flow_def = my_path + 'flows.xml'
 
 #Runs the turn router to generate the rou.xml file
 #Flow and speed rates will be evenly divided across the time interval
@@ -48,6 +79,10 @@ def getRoutes(vParams, turnPercent, flows, speed, duration, origin):
     router.JTRRouter(net_path, routes_path, flow_def, duration, turnPercent)   
 
 #Runs the simulation through sumo
+#Input: (bool) gui: True to run the simulation gui, False to run in the command line.
+#       (float) step_length: the length of a simulation time-step
+#       (int) numStemps: the number of simulation steps
+#Output: Does not return a value, generates XML files in the output folder
 def simulate(gui, step_length, numSteps):
     if not os.path.isdir(output):
         os.mkdir(output)
@@ -62,6 +97,8 @@ def simulate(gui, step_length, numSteps):
     traci.close()
 
 #Converts the detector output from XMLs to CSVs
+#Input: takes no input
+#Output: returns no output
 def convertData():
     for data in os.listdir(output):
         if "e1Detector" in data:
@@ -69,10 +106,34 @@ def convertData():
             XMLConvert.convert(target)
             os.remove(target)
 
-#def runSim(gui, stepLength, numSteps,
+#Starts the simulation
+#Input: (list) params: currently takes 13 items, and parsed out as below.
+#       duration: int in seconds
+#       stepLength: float in seconds
+#       flows: float/int in veh / hour
+#       speed: float in m/s
+#       turnPercent: percentage of cars that exit right at each exit
+#       origin: string - represents the edge of the network that cars will start on
+#       vehicleParams is parsed out into accel, decel, sigma, maxSpeed, minGap, speedDeviation, tau, emergencyDecel
+#Output: Returns no output, does result in CSVs being generate in the output folder.
+def runSim(params):
+    duration = params[0]
+    stepLength = params[1]
+    flows = params[2]
+    speed = params[3]
+    turnPercent = params[4]
+    origin = params[5]
+    vehicleParams = [str(i) for i in params[6:14]]
+    getRoutes(vehicleParams, turnPercent, flows, speed, duration, origin)
+    simulate(False, stepLength, int(duration / stepLength))
+    convertData()
 
 #Runs the simulation when the script is called.
 if __name__ == "__main__":
+    params = [86400, 0.1, 3000, 30, 2, '121304377#0', 2.6, 4.5, 0.5, 70, 2.5, 0, 2, 4.5]
+    runSim(params)
+    '''
+    #Above is equivalent to the following:
     vehicleParams = ['2.6', '4.5', '0.5', '70', '2.5', '0', '2', '4.5']
     duration = 3000
     step = 0.1
@@ -83,3 +144,4 @@ if __name__ == "__main__":
     getRoutes(vehicleParams, turnPercent, flows, speed, duration, origin)
     simulate(True, step, int(duration / step))
     convertData()
+    '''

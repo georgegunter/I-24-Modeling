@@ -1,3 +1,33 @@
+"""
+@author: Matthew Estopinal
+
+Instructions: This script defines the network simulated by MySimulator. It can be modified
+by giving commands every step on the addition_command() method in myEnv, or by editing the
+XML files that define the network. To generate the routes file, I typically call the TurnRouterTest.py
+script, although in the future I would probably implement that into this script.
+
+This script should not be called by itself in the terminal, instead it is used by the MySimulator.py
+script.
+
+For information that was used to help make a script like this, I used the tutorials for flow
+at https://github.com/flow-project/flow/tree/master/tutorials
+
+Note: If this script is not working, you might need to call a sys.path.append() pointing
+to the directory that flow is stored in. For some reason, it seems that other computers might
+need to do this, but mine hasn't so it is a little hard to test.
+
+"""
+my_path = '/home/mesto/flow/MyTests/'
+
+import sys
+sys.path.append(my_path)
+
+net_path = my_path + 'NoI440Edit_V2.net.xml",
+route_path = my_path + 'turnRoutes.rou.xml",
+vtype_path = my_path + 'flows.xml",
+detector_path = my_path + 'Detectors_NoI440Edit.xml",
+output_path = my_path + 'data/'
+
 from flow.core.experiment import Experiment
 
 from flow.scenarios import Scenario
@@ -10,6 +40,9 @@ from flow.core.params import SumoParams
 	
 from flow.envs.test import TestEnv
 
+#Starting edge of the network where vehicles will originate
+starting_edge = "121304377#0"
+
 #Defines an environment for the cars to run in
 #This is done to have access to the additional_command() method
 #Can be used to edit the simulation while running at certain steps
@@ -20,20 +53,21 @@ class myEnv(TestEnv):
     def setSpeed(self, num):
         self.roadSpeed = num
     def additional_command(self):
-        if self.step_counter == 1:
-            self.k.simulation.kernel_api.edge.setMaxSpeed("634155175", self.getSpeed())
+        pass
+        #if self.step_counter == 1:
+            #self.k.simulation.kernel_api.edge.setMaxSpeed("634155175", self.getSpeed())
 
+#Defines a custom scenario class deriving from the base scenario class.
+#Currently does not really do anything, but the scenario can be modified further
+#by modifying this class.
 class Custom_Scenario(Scenario):
-
-    '''
+    #These routes are overwritten by the template routes during initialization
     def specify_routes(self, net_params):
-
-        return {"634155175": ["634155175"]}
-    '''
+        return {starting_edge: [starting_edge]}
 
 def run_scenario(render=False,
-                 emissions="/home/mesto/flow/data/",
-                 output="/home/mesto/flow/data/",
+                 emissions=None,#"/home/mesto/flow/data/",
+                 output=output_path,
                  step=0.1,
                  duration=1000,
                  flow_rate=2800,
@@ -49,42 +83,22 @@ def run_scenario(render=False,
 
 	vehicles = VehicleParams()
 	inflow = InFlows()
-	'''
-	vehicles.add(
-	    veh_id="human",
-	    acceleration_controller=(car_following_model, {}),
-	    num_vehicles=20)
-	inflow.add(
-	    veh_type="human",
-	    end=100,
-	    edge="634155175",
-	    vehs_per_hour=flow_rate,
-	    departLane="free",
-	    departSpeed=speed)
-	inflow.add(
-	    veh_type="human",
-	    begin=101,
-	    edge="gneE0",
-	    vehs_per_hour=flow_rate,
-	    departLane="free",
-	    departSpeed=speed)
-	'''
+
         #Parameters for the network.
         #Template( net: file path for the sumo network. rou: path to the routes xml file
         #vtype: path to vehicle types xml. 
         #e1det: Requires modified traci simulation python file. Points to where detector definitions are stored
         #location that output will be saved. Also requires modified traci.py
 	net_params = NetParams(inflows=inflow, template= {
-	                       "net" : "/home/mesto/flow/MyTests/FinalNetwork.net.xml",
-                               "rou" : "/home/mesto/flow/MyTests/turnRoutes.rou.xml",
-                               "vtype": "/home/mesto/flow/MyTests/flows.xml",
-                               #"net" : "/home/mesto/flow/MyTests/I24-62.net.xml",
-	                       #"e1Det": "/home/mesto/flow/MyTests/I24-62.add.xml",
+	                       "net" : net_path,
+                               "rou" : route_path,
+                               "vtype": vtype_path,
+	                       "e1Det": detector_path,
                                "output": output
 	                       },
 	                       no_internal_links=False)
 	initial_config = InitialConfig(
-	    edges_distribution=["634155175"])
+	    edges_distribution=[starting_edge])
 
 	scenario = Custom_Scenario(
 	    name="template",
