@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Mon Jul 29 16:52:27 2019 by Eclipse SUMO netedit Version 1.2.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="/Users/danielshin/Desktop/Network/NoI440Edit.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/Users/danielshin/Desktop/Network/NoI440Edit.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <netedit>
+        <additional-files value="/Users/danielshin/Desktop/Network/59-64_detectors.xml"/>
+    </netedit>
+
+</configuration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <e1Detector id="e1Detector_108162065#1_0_112" name="RDS269" lane="108162065#1_0" pos="88.56" freq="30.00" file="RDS269_lane0.xml"/>
+    <e1Detector id="e1Detector_108162065#1_1_111" name="RDS269" lane="108162065#1_1" pos="88.55" freq="30.00" file="RDS269_lane1.xml"/>
+    <e1Detector id="e1Detector_108162065#1_2_110" name="RDS269" lane="108162065#1_2" pos="88.59" freq="30.00" file="RDS269_lane2.xml"/>
+    <e1Detector id="e1Detector_108162065#1_3_109" name="RDS269" lane="108162065#1_3" pos="88.59" freq="30.00" file="RDS269_lane3.xml"/>
+    <e1Detector id="e1Detector_108162443#1_0_118" name="RDS271" lane="108162443#1_0" pos="397.08" freq="30.00" file="RDS271_lane0.xml"/>
+    <e1Detector id="e1Detector_108162443#1_0_125" name="RDS273" lane="108162443#1_0" pos="1012.77" freq="30.00" file="RDS273_lane0.xml"/>
+    <e1Detector id="e1Detector_108162443#1_0_133" name="RDS275" lane="108162443#1_0" pos="1858.10" freq="30.00" file="RDS275_lane0.xml"/>
+    <e1Detector id="e1Detector_108162443#1_0_144" name="RDS277" lane="108162443#1_0" pos="2474.82" freq="30.00" file="RDS277_lane0.xml"/>
+    <e1Detector id="e1Detector_108162443#1_1_119" name="RDS271" lane="108162443#1_1" pos="397.17" freq="30.00" file="RDS271_lane1.xml"/>
+    <e1Detector id="e1Detector_108162443#1_1_126" name="RDS273" lane="108162443#1_1" pos="1013.06" freq="30.00" file="RDS273_lane1.xml"/>
+    <e1Detector id="e1Detector_108162443#1_1_134" name="RDS275" lane="108162443#1_1" pos="1858.18" freq="30.00" file="RDS275_lane1.xml"/>
+    <e1Detector id="e1Detector_108162443#1_1_143" name="RDS277" lane="108162443#1_1" pos="2474.72" freq="30.00" file="RDS277_lane1.xml"/>
+    <e1Detector id="e1Detector_108162443#1_2_120" name="RDS271" lane="108162443#1_2" pos="397.32" freq="30.00" file="RDS271_lane2.xml"/>
+    <e1Detector id="e1Detector_108162443#1_2_127" name="RDS273" lane="108162443#1_2" pos="1013.28" freq="30.00" file="RDS273_lane2.xml"/>
+    <e1Detector id="e1Detector_108162443#1_2_135" name="RDS275" lane="108162443#1_2" pos="1858.21" freq="30.00" file="RDS275_lane2.xml"/>
+    <e1Detector id="e1Detector_108162443#1_2_142" name="RDS277" lane="108162443#1_2" pos="2474.59" freq="30.00" file="RDS277_lane2.xml"/>
+    <e1Detector id="e1Detector_108162443#1_3_121" name="RDS271" lane="108162443#1_3" pos="397.44" freq="30.00" file="RDS271_lane3.xml"/>
+    <e1Detector id="e1Detector_108162443#1_3_128" name="RDS273" lane="108162443#1_3" pos="1013.52" freq="30.00" file="RDS273_lane3.xml"/>
+    <e1Detector id="e1Detector_108162443#1_3_136" name="RDS275" lane="108162443#1_3" pos="1858.29" freq="30.00" file="RDS275_lane3.xml"/>
+    <e1Detector id="e1Detector_108162443#1_3_141" name="RDS277" lane="108162443#1_3" pos="2474.45" freq="30.00" file="RDS277_lane3.xml"/>
+    <e1Detector id="e1Detector_121304376_0_33" name="RDS227" lane="121304376_0" pos="305.33" freq="30.00" file="RDS227_lane0.xml"/>
+    <e1Detector id="e1Detector_121304376_1_32" name="RDS227" lane="121304376_1" pos="305.37" freq="30.00" file="RDS227_lane1.xml"/>
+    <e1Detector id="e1Detector_121304376_2_31" name="RDS227" lane="121304376_2" pos="305.42" freq="30.00" file="RDS227_lane2.xml"/>
+    <e1Detector id="e1Detector_121304376_3_30" name="RDS227" lane="121304376_3" pos="305.47" freq="30.00" file="RDS227_lane3.xml"/>
+    <e1Detector id="e1Detector_121304376_4_29" name="RDS227" lane="121304376_4" pos="305.51" freq="30.00" file="RDS227_lane4.xml"/>
+    <e1Detector id="e1Detector_121304377#0_0_36" name="RDS226" lane="121304377#0_0" pos="60.48" freq="30.00" file="RDS226_lane0.xml"/>
+    <e1Detector id="e1Detector_121304377#0_0_40" name="RDS228" lane="121304377#0_0" pos="568.29" freq="30.00" file="RDS228_lane0.xml"/>
+    <e1Detector id="e1Detector_121304377#0_1_37" name="RDS226" lane="121304377#0_1" pos="60.50" freq="30.00" file="RDS226_lane1.xml"/>
+    <e1Detector id="e1Detector_121304377#0_1_41" name="RDS228" lane="121304377#0_1" pos="568.26" freq="30.00" file="RDS228_lane1.xml"/>
+    <e1Detector id="e1Detector_121304377#0_2_38" name="RDS226" lane="121304377#0_2" pos="60.52" freq="30.00" file="RDS226_lane2.xml"/>
+    <e1Detector id="e1Detector_121304377#0_2_42" name="RDS228" lane="121304377#0_2" pos="568.23" freq="30.00" file="RDS228_lane2.xml"/>
+    <e1Detector id="e1Detector_121304377#0_3_39" name="RDS226" lane="121304377#0_3" pos="60.54" freq="30.00" file="RDS226_lane3.xml"/>
+    <e1Detector id="e1Detector_121304377#0_3_43" name="RDS228" lane="121304377#0_3" pos="568.20" freq="30.00" file="RDS228_lane3.xml"/>
+    <e1Detector id="e1Detector_121304377#2_0_49" name="RDS230" lane="121304377#2_0" pos="306.93" freq="30.00" file="RDS230_lane0.xml"/>
+    <e1Detector id="e1Detector_121304377#2_0_57" name="RDS232" lane="121304377#2_0" pos="739.35" freq="30.00" file="RDS232_lane0.xml"/>
+    <e1Detector id="e1Detector_121304377#2_0_69" name="RDS259" lane="121304377#2_0" pos="1646.46" freq="30.00" file="RDS259_lane0.xml"/>
+    <e1Detector id="e1Detector_121304377#2_1_50" name="RDS230" lane="121304377#2_1" pos="306.31" freq="30.00" file="RDS230_lane1.xml"/>
+    <e1Detector id="e1Detector_121304377#2_1_58" name="RDS232" lane="121304377#2_1" pos="739.13" freq="30.00" file="RDS232_lane1.xml"/>
+    <e1Detector id="e1Detector_121304377#2_1_70" name="RDS259" lane="121304377#2_1" pos="1646.53" freq="30.00" file="RDS259_lane1.xml"/>
+    <e1Detector id="e1Detector_121304377#2_2_51" name="RDS230" lane="121304377#2_2" pos="305.67" freq="30.00" file="RDS230_lane2.xml"/>
+    <e1Detector id="e1Detector_121304377#2_2_59" name="RDS232" lane="121304377#2_2" pos="738.93" freq="30.00" file="RDS232_lane2.xml"/>
+    <e1Detector id="e1Detector_121304377#2_2_71" name="RDS259" lane="121304377#2_2" pos="1646.62" freq="30.00" file="RDS259_lane2.xml"/>
+    <e1Detector id="e1Detector_121304377#2_3_52" name="RDS230" lane="121304377#2_3" pos="305.06" freq="30.00" file="RDS230_lane3.xml"/>
+    <e1Detector id="e1Detector_121304377#2_3_60" name="RDS232" lane="121304377#2_3" pos="738.77" freq="30.00" file="RDS232_lane3.xml"/>
+    <e1Detector id="e1Detector_121304377#2_3_72" name="RDS259" lane="121304377#2_3" pos="1646.71" freq="30.00" file="RDS259_lane3.xml"/>
+    <e1Detector id="e1Detector_124809167#1_0_93" name="RDS265" lane="124809167#1_0" pos="325.48" freq="30.00" file="RDS265_lane0.xml"/>
+    <e1Detector id="e1Detector_124809167#1_0_97" name="RDS266" lane="124809167#1_0" pos="813.22" freq="30.00" file="RDS266_lane0.xml"/>
+    <e1Detector id="e1Detector_124809167#1_1_94" name="RDS265" lane="124809167#1_1" pos="325.45" freq="30.00" file="RDS265_lane1.xml"/>
+    <e1Detector id="e1Detector_124809167#1_1_98" name="RDS266" lane="124809167#1_1" pos="813.18" freq="30.00" file="RDS266_lane1.xml"/>
+    <e1Detector id="e1Detector_124809167#1_2_95" name="RDS265" lane="124809167#1_2" pos="325.38" freq="30.00" file="RDS265_lane2.xml"/>
+    <e1Detector id="e1Detector_124809167#1_2_99" name="RDS266" lane="124809167#1_2" pos="813.19" freq="30.00" file="RDS266_lane2.xml"/>
+    <e1Detector id="e1Detector_124809167#1_3_100" name="RDS266" lane="124809167#1_3" pos="813.22" freq="30.00" file="RDS266_lane3.xml"/>
+    <e1Detector id="e1Detector_124809167#1_3_96" name="RDS265" lane="124809167#1_3" pos="325.34" freq="30.00" file="RDS265_lane3.xml"/>
+    <e1Detector id="e1Detector_124809170#1_0_88" name="RDS263" lane="124809170#1_0" pos="181.41" freq="30.00" file="RDS263_lane0.xml"/>
+    <e1Detector id="e1Detector_124809170#1_1_87" name="RDS263" lane="124809170#1_1" pos="181.50" freq="30.00" file="RDS263_lane1.xml"/>
+    <e1Detector id="e1Detector_124809170#1_2_86" name="RDS263" lane="124809170#1_2" pos="181.55" freq="30.00" file="RDS263_lane2.xml"/>
+    <e1Detector id="e1Detector_124809170#1_3_85" name="RDS263" lane="124809170#1_3" pos="181.63" freq="30.00" file="RDS263_lane3.xml"/>
+    <e1Detector id="e1Detector_124809170#2_0_56" name="RDS231" lane="124809170#2_0" pos="2179.69" freq="30.00" file="RDS231_lane0.xml"/>
+    <e1Detector id="e1Detector_124809170#2_0_64" name="RDS233" lane="124809170#2_0" pos="1812.42" freq="30.00" file="RDS233_lane0.xml"/>
+    <e1Detector id="e1Detector_124809170#2_0_68" name="RDS258" lane="124809170#2_0" pos="931.17" freq="30.00" file="RDS258_lane0.xml"/>
+    <e1Detector id="e1Detector_124809170#2_0_76" name="RDS260" lane="124809170#2_0" pos="206.13" freq="30.00" file="RDS260_lane0.xml"/>
+    <e1Detector id="e1Detector_124809170#2_1_55" name="RDS231" lane="124809170#2_1" pos="2178.99" freq="30.00" file="RDS231_lane1.xml"/>
+    <e1Detector id="e1Detector_124809170#2_1_63" name="RDS233" lane="124809170#2_1" pos="1812.28" freq="30.00" file="RDS233_lane1.xml"/>
+    <e1Detector id="e1Detector_124809170#2_1_67" name="RDS258" lane="124809170#2_1" pos="931.34" freq="30.00" file="RDS258_lane1.xml"/>
+    <e1Detector id="e1Detector_124809170#2_1_75" name="RDS260" lane="124809170#2_1" pos="206.17" freq="30.00" file="RDS260_lane1.xml"/>
+    <e1Detector id="e1Detector_124809170#2_2_54" name="RDS231" lane="124809170#2_2" pos="2178.37" freq="30.00" file="RDS231_lane2.xml"/>
+    <e1Detector id="e1Detector_124809170#2_2_62" name="RDS233" lane="124809170#2_2" pos="1812.17" freq="30.00" file="RDS233_lane2.xml"/>
+    <e1Detector id="e1Detector_124809170#2_2_66" name="RDS258" lane="124809170#2_2" pos="931.50" freq="30.00" file="RDS258_lane2.xml"/>
+    <e1Detector id="e1Detector_124809170#2_2_74" name="RDS260" lane="124809170#2_2" pos="206.20" freq="30.00" file="RDS260_lane2.xml"/>
+    <e1Detector id="e1Detector_124809170#2_3_53" name="RDS231" lane="124809170#2_3" pos="2177.71" freq="30.00" file="RDS231_lane3.xml"/>
+    <e1Detector id="e1Detector_124809170#2_3_61" name="RDS233" lane="124809170#2_3" pos="1812.05" freq="30.00" file="RDS233_lane3.xml"/>
+    <e1Detector id="e1Detector_124809170#2_3_65" name="RDS258" lane="124809170#2_3" pos="931.64" freq="30.00" file="RDS258_lane3.xml"/>
+    <e1Detector id="e1Detector_124809170#2_3_73" name="RDS260" lane="124809170#2_3" pos="206.23" freq="30.00" file="RDS260_lane3.xml"/>
+    <e1Detector id="e1Detector_277208914#2-AddedOnRampEdge_0_48" name="RDS229" lane="277208914#2-AddedOnRampEdge_0" pos="20.38" freq="30.00" file="RDS229_lane0.xml"/>
+    <e1Detector id="e1Detector_277208914#2-AddedOnRampEdge_1_47" name="RDS229" lane="277208914#2-AddedOnRampEdge_1" pos="20.39" freq="30.00" file="RDS229_lane1.xml"/>
+    <e1Detector id="e1Detector_277208914#2-AddedOnRampEdge_2_46" name="RDS229" lane="277208914#2-AddedOnRampEdge_2" pos="20.39" freq="30.00" file="RDS229_lane2.xml"/>
+    <e1Detector id="e1Detector_277208914#2-AddedOnRampEdge_3_45" name="RDS229" lane="277208914#2-AddedOnRampEdge_3" pos="20.38" freq="30.00" file="RDS229_lane3.xml"/>
+    <e1Detector id="e1Detector_277208914#2-AddedOnRampEdge_4_44" name="RDS229" lane="277208914#2-AddedOnRampEdge_4" pos="20.38" freq="30.00" file="RDS229_lane4.xml"/>
+    <e1Detector id="e1Detector_277208915#0_0_77" name="RDS261" lane="277208915#0_0" pos="247.89" freq="30.00" file="RDS261_lane0.xml"/>
+    <e1Detector id="e1Detector_277208915#0_1_78" name="RDS261" lane="277208915#0_1" pos="247.85" freq="30.00" file="RDS261_lane1.xml"/>
+    <e1Detector id="e1Detector_277208915#0_2_79" name="RDS261" lane="277208915#0_2" pos="247.81" freq="30.00" file="RDS261_lane2.xml"/>
+    <e1Detector id="e1Detector_277208915#0_3_80" name="RDS261" lane="277208915#0_3" pos="247.76" freq="30.00" file="RDS261_lane3.xml"/>
+    <e1Detector id="e1Detector_277208915#1_0_81" name="RDS262" lane="277208915#1_0" pos="316.15" freq="30.00" file="RDS262_lane0.xml"/>
+    <e1Detector id="e1Detector_277208915#1_1_82" name="RDS262" lane="277208915#1_1" pos="316.11" freq="30.00" file="RDS262_lane1.xml"/>
+    <e1Detector id="e1Detector_277208915#1_2_83" name="RDS262" lane="277208915#1_2" pos="316.08" freq="30.00" file="RDS262_lane2.xml"/>
+    <e1Detector id="e1Detector_277208915#1_3_84" name="RDS262" lane="277208915#1_3" pos="316.07" freq="30.00" file="RDS262_lane3.xml"/>
+    <e1Detector id="e1Detector_634155175_0_113" name="RDS270" lane="634155175_0" pos="2662.03" freq="30.00" file="RDS270_lane0.xml"/>
+    <e1Detector id="e1Detector_634155175_0_122" name="RDS272" lane="634155175_0" pos="2031.02" freq="30.00" file="RDS272_lane0.xml"/>
+    <e1Detector id="e1Detector_634155175_0_132" name="RDS274" lane="634155175_0" pos="1207.00" freq="30.00" file="RDS274_lane0.xml"/>
+    <e1Detector id="e1Detector_634155175_0_137" name="RDS276" lane="634155175_0" pos="589.28" freq="30.00" file="RDS276_lane0.xml"/>
+    <e1Detector id="e1Detector_634155175_1_115" name="RDS272" lane="634155175_1" pos="2031.29" freq="30.00" file="RDS272_lane1.xml"/>
+    <e1Detector id="e1Detector_634155175_1_116" name="RDS270" lane="634155175_1" pos="2662.09" freq="30.00" file="RDS270_lane1.xml"/>
+    <e1Detector id="e1Detector_634155175_1_131" name="RDS274" lane="634155175_1" pos="1207.04" freq="30.00" file="RDS274_lane1.xml"/>
+    <e1Detector id="e1Detector_634155175_1_138" name="RDS276" lane="634155175_1" pos="589.13" freq="30.00" file="RDS276_lane1.xml"/>
+    <e1Detector id="e1Detector_634155175_2_116" name="RDS270" lane="634155175_2" pos="2662.21" freq="30.00" file="RDS270_lane2.xml"/>
+    <e1Detector id="e1Detector_634155175_2_123" name="RDS272" lane="634155175_2" pos="2031.60" freq="30.00" file="RDS272_lane2.xml"/>
+    <e1Detector id="e1Detector_634155175_2_130" name="RDS274" lane="634155175_2" pos="1207.10" freq="30.00" file="RDS274_lane2.xml"/>
+    <e1Detector id="e1Detector_634155175_2_139" name="RDS276" lane="634155175_2" pos="588.94" freq="30.00" file="RDS276_lane2.xml"/>
+    <e1Detector id="e1Detector_634155175_3_117" name="RDS270" lane="634155175_3" pos="2662.32" freq="30.00" file="RDS270_lane3.xml"/>
+    <e1Detector id="e1Detector_634155175_3_124" name="RDS272" lane="634155175_3" pos="2031.85" freq="30.00" file="RDS272_lane3.xml"/>
+    <e1Detector id="e1Detector_634155175_3_129" name="RDS274" lane="634155175_3" pos="1207.23" freq="30.00" file="RDS274_lane3.xml"/>
+    <e1Detector id="e1Detector_634155175_3_140" name="RDS276" lane="634155175_3" pos="588.77" freq="30.00" file="RDS276_lane3.xml"/>
+    <e1Detector id="e1Detector_635078551_0_104" name="RDS267" lane="635078551_0" pos="432.49" freq="30.00" file="RDS267_lane0.xml"/>
+    <e1Detector id="e1Detector_635078551_0_92" name="RDS264" lane="635078551_0" pos="965.67" freq="30.00" file="RDS264_lane0.xml"/>
+    <e1Detector id="e1Detector_635078551_1_103" name="RDS267" lane="635078551_1" pos="432.45" freq="30.00" file="RDS267_lane1.xml"/>
+    <e1Detector id="e1Detector_635078551_1_91" name="RDS264" lane="635078551_1" pos="965.71" freq="30.00" file="RDS264_lane1.xml"/>
+    <e1Detector id="e1Detector_635078551_2_102" name="RDS267" lane="635078551_2" pos="432.42" freq="30.00" file="RDS267_lane2.xml"/>
+    <e1Detector id="e1Detector_635078551_2_90" name="RDS264" lane="635078551_2" pos="965.75" freq="30.00" file="RDS264_lane2.xml"/>
+    <e1Detector id="e1Detector_635078551_3_101" name="RDS267" lane="635078551_3" pos="432.38" freq="30.00" file="RDS267_lane3.xml"/>
+    <e1Detector id="e1Detector_635078551_3_89" name="RDS264" lane="635078551_3" pos="965.69" freq="30.00" file="RDS264_lane3.xml"/>
+    <e1Detector id="e1Detector_635078708_0_105" name="RDS268" lane="635078708_0" pos="187.73" freq="30.00" file="RDS268_lane0.xml"/>
+    <e1Detector id="e1Detector_635078708_1_106" name="RDS268" lane="635078708_1" pos="187.67" freq="30.00" file="RDS268_lane1.xml"/>
+    <e1Detector id="e1Detector_635078708_2_107" name="RDS268" lane="635078708_2" pos="187.60" freq="30.00" file="RDS268_lane2.xml"/>
+    <e1Detector id="e1Detector_635078708_3_108" name="RDS268" lane="635078708_3" pos="187.54" freq="30.00" file="RDS268_lane3.xml"/>
+</additional>
